@@ -63,12 +63,10 @@ enum pldm_state_sensor_commands{
 struct PLDMEffecter : public Effecter
 {
     PLDMEffecter(std::shared_ptr<sdbusplus::asio::connection>& conn,
-                  boost::asio::io_service& io,
                   const std::string& name,
                   sdbusplus::asio::object_server& objectServer,
                   uint16_t effecterId,
-                  const std::string& effecterTypeName,
-                  const std::string& effecterUnit);
+                  const std::string& effecterTypeName);
     ~PLDMEffecter();
 
     void init(void);
@@ -92,7 +90,6 @@ struct PLDMEffecter : public Effecter
 struct PLDMNumericEffecter : public Effecter
 {
     PLDMNumericEffecter(std::shared_ptr<sdbusplus::asio::connection>& conn,
-                  boost::asio::io_service& io,
                   const std::string& name,
                   sdbusplus::asio::object_server& objectServer,
                   uint16_t effecterId,
@@ -125,8 +122,7 @@ struct PLDMStateSensor : public StateSensor
                   const std::string& name,
                   sdbusplus::asio::object_server& objectServer,
                   uint16_t sensorId,
-                  const std::string& sensorTypeName,
-                  const std::string& sensorUnit);
+                  const std::string& sensorTypeName);
     ~PLDMStateSensor();
 
     void state_sensor_read_loop(void);

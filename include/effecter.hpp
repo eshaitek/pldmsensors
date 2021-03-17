@@ -26,9 +26,7 @@ struct Effecter
     std::shared_ptr<sdbusplus::asio::connection> dbusConnection;
 
     void
-        setInitialProperties(std::shared_ptr<sdbusplus::asio::connection>& conn,
-                             const std::string label = std::string(),
-                             size_t thresholdSize = 0)
+        setInitialProperties(void)
     {
         if (!effecterInterface->initialize())
         {
@@ -55,9 +53,7 @@ struct NumericEffecter
     std::shared_ptr<sdbusplus::asio::connection> dbusConnection;
 
     void
-        setInitialProperties(std::shared_ptr<sdbusplus::asio::connection>& conn,
-                             const std::string label = std::string(),
-                             size_t thresholdSize = 0)
+        setInitialProperties(void)
     {
         if (!effecterInterface->initialize())
         {

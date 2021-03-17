@@ -101,7 +101,7 @@ int parseSensorReadingResponseMsg(pldm_msg* responsePtr, size_t payloadLength, d
             &reteventState, reinterpret_cast<uint8_t*>(&retpresentReading));
         if (rc != PLDM_SUCCESS || retcompletionCode != PLDM_SUCCESS)
         {
-            std::cerr << "Response Message Error: "
+            std::cerr << "parseSensorReadingResponseMsg::Response Message Error: "
                     << "rc=" << rc << ",retcompletionCode=" << static_cast<int>(retcompletionCode) << "\n";
             return -1;
         }
